@@ -134,4 +134,24 @@ if (delContacts != undefined){
 let numOfContacts = addressBookMainArray.reduce((count, contact) => {
     return count + 1;
         }, 0);
-console.log(numOfContacts);                         
+console.log(numOfContacts);
+// checking duplicate entry by using map, filter, reduce methods:
+// map method
+let contactKey = addressBookMainArray.map((contact) => {
+    return `{contact.firstName}`;
+});
+// filter method
+let uniqueContactKeys = contactKey.filter((key, index) => {
+    return contactKey.indexOf(key) === index;
+});
+// reduce method
+let uniqueContacts = uniqueContactKeys.reduce((result, key) => {
+    let contact = addressBookMainArray.find((c) => {
+      return c.firstName === "Ayush";
+    });
+    if (contact) {
+      result.push(contact);
+    }
+    return result;
+  }, []);
+  console.log(uniqueContacts);
