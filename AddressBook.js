@@ -171,3 +171,6 @@ let searchByState = addressBookMainArray.reduce((result, contact) => {
     return result;
 }, []);
 console.log(searchByState);
+// View person by city
+let personInCity = addressBookMainArray.filter(contact => contact.city === "jharkhand");
+console.log(personInCity);
