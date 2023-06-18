@@ -105,4 +105,19 @@ console.log(addressBookMain);
 let addressBookMainArray = new Array();
 addressBookMainArray.push(new AddressBookMain("Kundan", "Singh", "Saran", "Bangluru", "Bihar", 123456, 
                             7878867574, "kundan121@gmail.com"));
-console.log(addressBookMainArray);                            
+console.log(addressBookMainArray);  
+// find contact by first name and edit the contact
+let contacts = addressBookMainArray.find(contact => contact.firstName === "Kundan");
+if (contacts){
+    // contacts.setFirstName("Ritik");
+    contacts.setLastName("Kumar");
+    contacts.setAddress("bokaro");
+    contacts.setCity("jharkhand");
+    contacts.setState("Bihar");
+    contacts.setZip(654321);
+    contacts.setPhoneNumber(9898989898);
+    contacts.setEmail("ritikkumar121@gmail.com");
+    console.log(addressBookMainArray);
+}else{
+    console.log("Contact Not Found");
+}                          
