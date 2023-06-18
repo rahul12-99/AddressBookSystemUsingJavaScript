@@ -109,7 +109,7 @@ console.log(addressBookMainArray);
 // find contact by first name and edit the contact
 let contacts = addressBookMainArray.find(contact => contact.firstName === "Kundan");
 if (contacts){
-    // contacts.setFirstName("Ritik");
+    contacts.setFirstName("Ritik");
     contacts.setLastName("Kumar");
     contacts.setAddress("bokaro");
     contacts.setCity("jharkhand");
@@ -120,4 +120,13 @@ if (contacts){
     console.log(addressBookMainArray);
 }else{
     console.log("Contact Not Found");
-}                          
+} 
+// Delete contact by name
+let delContacts = addressBookMainArray.find(contact => contact.firstName === "Ritik");
+if (delContacts != undefined){
+    addressBookMainArray.pop();
+    console.log("Contact Deleted");
+    console.log(addressBookMainArray)
+}else{
+    console.log("Contact Not Found");
+}                         
