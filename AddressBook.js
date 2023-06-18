@@ -21,6 +21,77 @@ class AddressBookMain{
         this.email = email;
     }
 
+    // getter and setter method varification with Regex
+    getFirstName(){
+        return this.firstName;
+    }
+    setFirstName(firstName){
+        let firstNameRegex = RegExp('^[A-Z]{1}[a-z]{2,}$');
+        if (firstNameRegex.test(firstName)){
+            this.firstName = firstName;
+        }else throw "Incorrect First Name";
+    }
+    getLastName(){
+        return this.lastName;
+    }
+    setLastName(lastName){
+        let lastNameRegex = RegExp('^[A-Z]{1}[a-z]{2,}$');
+        if (lastNameRegex.test(lastName)){
+            this.lastName = lastName;
+        }else throw "Incorrect Last Name";
+    }
+    getAddress(){
+        return this.address;
+    }
+    setAddress(address){
+        let addressRegex = RegExp('[(A-Z)(a-z)]{4,}');
+        if (addressRegex.test(address)){
+            this.address = address;
+        }else throw "Address must be 4 letters";
+    }
+    getCity(){
+        return this.city;
+    }
+    setCity(city){
+        let cityRegex = RegExp('[(A-Z)(a-z)]{4,}');
+        if (cityRegex.test(city)){
+            this.city = city;
+        }else throw "City must be 4 letters";
+    }
+    getState(){
+        return this.state;
+    }
+    setState(state){
+        let stateRegex = RegExp('[(A-Z)(a-z)]{4,}');
+        if (stateRegex.test(state)){
+            this.state = state;
+        }else throw "State must be 4 letters";
+    }
+    getZip(){
+        return this.zip;
+    }
+    setZip(zip){
+        this.zip = zip;
+    }
+    getPhoneNumber(){
+        return this.phoneNumber;
+    }
+    setPhoneNumber(phoneNumber){
+        let phoneRegex = RegExp("[0-9]{10}");
+        if (phoneRegex.test(phoneNumber)){
+            this.phoneNumber = phoneNumber;
+        }else throw "Incorrect Phone Number";
+    }
+    getEmail(){
+        return this.email;
+    }
+    setEmail(email){
+        let emailRegex = RegExp("^[a-zA-z0-9+.+a-z]+@+[a-z{2,5}+.+a-z{2,3}+.+a-z{2,3}]{2,30}");
+        if (emailRegex.test(email)){
+            this.email = email;
+        }else throw "Incorrect Email";
+    }
+
     // toString method
     toString(){
         return "First Name = " + this.firstName + ", Last Name = " + this.lastName + ", Address = " + this.address +
@@ -28,5 +99,19 @@ class AddressBookMain{
                 this.phoneNumber + ", Email = " + this.email
     }
 }
-let addressBookMain = new AddressBookMain("Rahul", "Kumar", "Banka", "Bhagalpur", "Bihar", 813211, 9934691893, "rahul@123");
+let addressBookMain = new AddressBookMain("Rahul", "Kumar", "Banka", "Bhagalpur", "Bihar", 813211, 9934691893, "Rahul@123");
 console.log(addressBookMain);
+try {
+    let newAddressBookMain = new AddressBookMain();
+    newAddressBookMain.setFirstName("Kundan");
+    newAddressBookMain.setLastName("Kumar");
+    newAddressBookMain.setAddress("ambakala");
+    newAddressBookMain.setCity("sehor");
+    newAddressBookMain.setState("bihar");
+    newAddressBookMain.setZip(813321);
+    newAddressBookMain.setPhoneNumber(8727612223);
+    newAddressBookMain.setEmail("kundan12@gmail.com");
+    console.log(newAddressBookMain);
+}catch (exception){
+    console.error(exception);
+}
