@@ -37,7 +37,7 @@ class AddressBookMain{
     setLastName(lastName){
         let lastNameRegex = RegExp('^[A-Z]{1}[a-z]{2,}$');
         if (lastNameRegex.test(lastName)){
-            this.lastName = lastName;
+            this.firstName = lastName;
         }else throw "Incorrect Last Name";
     }
     getAddress(){
@@ -101,17 +101,8 @@ class AddressBookMain{
 }
 let addressBookMain = new AddressBookMain("Rahul", "Kumar", "Banka", "Bhagalpur", "Bihar", 813211, 9934691893, "Rahul@123");
 console.log(addressBookMain);
-try {
-    let newAddressBookMain = new AddressBookMain();
-    newAddressBookMain.setFirstName("Kundan");
-    newAddressBookMain.setLastName("Kumar");
-    newAddressBookMain.setAddress("ambakala");
-    newAddressBookMain.setCity("sehor");
-    newAddressBookMain.setState("bihar");
-    newAddressBookMain.setZip(813321);
-    newAddressBookMain.setPhoneNumber(8727612223);
-    newAddressBookMain.setEmail("kundan12@gmail.com");
-    console.log(newAddressBookMain);
-}catch (exception){
-    console.error(exception);
-}
+// create AddressBook Array
+let addressBookMainArray = new Array();
+addressBookMainArray.push(new AddressBookMain("Kundan", "Singh", "Saran", "Bangluru", "Bihar", 123456, 
+                            7878867574, "kundan121@gmail.com"));
+console.log(addressBookMainArray);                            
