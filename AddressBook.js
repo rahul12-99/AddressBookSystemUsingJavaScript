@@ -155,3 +155,19 @@ let uniqueContacts = uniqueContactKeys.reduce((result, key) => {
     return result;
   }, []);
   console.log(uniqueContacts);
+// Search by City:
+let searchByCity = addressBookMainArray.reduce((result, contact) => {
+    if (contact.city === "jharkhand"){
+        result.push(contact);
+    }
+    return result;
+}, []);
+console.log(searchByCity);
+// search by state:
+let searchByState = addressBookMainArray.reduce((result, contact) => {
+    if (contact.state === "Bihar"){
+        result.push(contact);
+    }
+    return result;
+}, []);
+console.log(searchByState);
