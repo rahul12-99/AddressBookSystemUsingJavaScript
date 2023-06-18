@@ -185,3 +185,6 @@ console.log("State Count: " + countByState);
 // sort by name
 addressBookMainArray.sort((a, b) => a.firstName.localeCompare(b.firstName));
 console.log(addressBookMainArray);
+// sort by Zip
+addressBookMainArray.sort((a, b) => a.zip - b.zip);
+console.log(addressBookMainArray);
