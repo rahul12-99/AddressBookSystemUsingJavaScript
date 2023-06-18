@@ -174,3 +174,11 @@ console.log(searchByState);
 // View person by city
 let personInCity = addressBookMainArray.filter(contact => contact.city === "jharkhand");
 console.log(personInCity);
+// count person in city:
+let contactsInCity = addressBookMainArray.filter(contact => contact.city === "patna");
+let countInCity = contactsInCity.length;
+console.log("City Count: " + countInCity);
+// count person by state:
+let contactsInState = addressBookMainArray.filter(contact => contact.state === "Bihar");
+let countByState = contactsInState.length;
+console.log("State Count: " + countByState);
